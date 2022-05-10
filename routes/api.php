@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,11 @@ Route::middleware('auth:sanctum')->group(function(){
 
     Route::post('projects', [ProjectsController::class, 'store']);
 
-    Route::put('projects', [ProjectsController::class, 'update']);
+    Route::put('projects/{id}', [ProjectsController::class, 'update']);
     
-    Route::delete('projects', [ProjectsController::class, 'destroy']);
+    Route::delete('projects/{id}', [ProjectsController::class, 'destroy']);
 
     Route::post('logout', [AuthController::class, 'logout']);
+
+    Route::post('upload', [FileController::class, 'upload']);
 });
