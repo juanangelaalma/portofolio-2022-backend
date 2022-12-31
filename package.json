@@ -1,5 +1,6 @@
 {
     "private": true,
+    "author": "Juan Alma",
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
